@@ -34,6 +34,9 @@
     <ClCompile Include="Bullet.cpp">
       <Filter>Source Files\GameComponents</Filter>
     </ClCompile>
+    <ClCompile Include="Text.cpp">
+      <Filter>Source Files\GameComponents</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\leetlib.h">
@@ -52,6 +55,9 @@
       <Filter>Source Files\GameComponents</Filter>
     </ClInclude>
     <ClInclude Include="Enemy.h">
+      <Filter>Source Files\GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Text.h">
       <Filter>Source Files\GameComponents</Filter>
     </ClInclude>
   </ItemGroup>

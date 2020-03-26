@@ -7,6 +7,7 @@
 #include "Player.h"
 #include "Sprite.h"
 #include "GameComponent.h"
+#include "Text.h"
 
 void Game()
 {
@@ -21,12 +22,18 @@ void Game()
 	// 50 enemies
 	std::vector<Enemy> enemies = { 50, { sprites.enemy } };
 
+	// Title
+	Text header = { "space invaders 2d", sprites.alphabet, Position{80, 30} };
+
 	int time = 0;
 	auto bulletToFire = bullets.begin();
 	int counter = 0;
 	while (!WantQuit() && !IsKeyDown(VK_ESCAPE))
 	{
 		++time;
+
+		// Draw header
+		header.tick(time);
 
 		// Draw enemies
 		for (auto& enemy : enemies)
@@ -65,17 +72,6 @@ void Game()
 		for (auto& bullet : bullets)
 		{
 			bullet.tick(time);
-		}
-
-		// Draw text
-		auto constexpr text = "space invaders 2d";
-
-		for (int i = 0; i < strlen(text); ++i)
-		{
-			if (const auto search = sprites.alphabet.find(text[i]); search != sprites.alphabet.end())
-			{
-				DrawSprite(search->second, i * 40 + 80, 30, 20, 20, sin(time * 0.1) * i * 0.01);
-			}
 		}
 
 		Flip();
