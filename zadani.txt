@@ -1,0 +1,25 @@
+Jimmy Leet programoval nejposlednjší a nejlepšejší hru pro jisté studio, ale těsně
+před dokončením ho přejela tramvaj. Podrobné zkoumání jeho kódu odhalilo, že 
+nakonec nebyl takový génius, jako o sobě tvrdil, a hra je krajně nedodělaná.
+
+Jsi naše poslední naděje. Jeho práce je v přiloženém adresáři jako projekt, který by 
+měl jít zkompilovat ve Visual Studiu 2003 (nebo i novějším, po konverzi), a obsahuje 
+i DirectX a fmod headery/liby, které jsou zapotřebí.
+
+Vydavatel má velmi konkrétní požadavky:
+
+ * Neexistuje detekce kolizí. Zařiď, aby veci vybuchovaly! Jak emzáci tak hráč.
+ * Hra musí mít skóre, které je vidět na obrazovce.
+ * Hra by měla mít nějaký systém na high score. Může být i úplně jednoduchý.
+ * Hra taky tak trochu stojí za prd. Nemůžeš ji nějak zlepšit? Cokoliv, co bude 
+    trochu zábava.
+ * A nakonec to nejdůležitější: vydavatel chce vidět zdrojáky. Představují si, 
+    že dostanou dobře zformátovaný kód a komentáře, aby si snadno mohli 
+    udělat pokračování. Tady tě Jimmy dost vyšplouchnul. Kod je strašný a je potřeba
+	ho hodne upravit. Klidně si tam přidávej věci, které ti chybí.
+
+Nejsou žádná pevná pravidla, jak tyto požadavky splnit. Čas není omezen, ale 
+zajímalo by nás, jak dlouho jsi na tom doopravdy pracoval (nepodvádět!).
+
+Budeš se muset naučit používat pokročilé grafické API, které Jimmy Leet vytvořil, a 
+pochopit jeho AI kód. Hodně štěstí.
