@@ -1,6 +1,6 @@
 #pragma once
 #include "GameComponent.h"
-class Text : public GameComponent<Text>
+class Text : public GameComponent
 {
 private:
     std::string_view text;

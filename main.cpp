@@ -1,13 +1,56 @@
 #include "lib/leetlib.h"
-#include <math.h>
 #include <algorithm>
+#include <deque>
+#include <math.h>
 
 #include "Bullet.h"
 #include "Enemy.h"
+#include "GameComponent.h"
 #include "Player.h"
 #include "Sprite.h"
-#include "GameComponent.h"
 #include "Text.h"
+
+template <typename T>
+class Container : public std::deque<T>
+{
+	using iterator = typename std::deque<T>::iterator;
+	using size_type = typename std::deque<T>::size_type;
+	using parent = std::deque<T>;
+
+public:
+	Container(const size_type count, const T& value)
+	{
+		for (size_type i = 0; i < count; ++i)
+		{
+			parent::push_back(value);
+		}
+	}
+
+	iterator begin() noexcept
+	{
+		return parent::begin();
+	}
+
+	iterator end() noexcept
+	{
+		return parent::end();
+	}
+
+	void next(iterator& iterator)
+	{
+		iterator = std::next(iterator);
+		if (iterator == parent::end())
+		{
+			iterator = parent::begin();
+		}
+	}
+
+	template<class... Args>
+	T& emplace_back(Args&&... args)
+	{
+		return parent::emplace_back(std::forward<Args>(args)...);
+	}
+};
 
 void Game()
 {
@@ -17,13 +60,13 @@ void Game()
 	Player player = { sprites.player, Position(400, 550), Size(50, 50) };
 
 	// 10 bullets
-	std::vector<Bullet> bullets = { 10, { sprites.bullet, Size(10, 10) } };
+	Container<Bullet> bullets = { 10, { sprites.bullet, Size(10, 10) } };
 
 	// 50 enemies
-	std::vector<Enemy> enemies = { 50, { sprites.enemy } };
+	Container<Enemy> enemies = { 50, { sprites.enemy } };
 
 	// Title
-	Text header = { "space invaders 2d", sprites.alphabet, Position{80, 30} };
+	Text header = { "space invaders 2d", sprites.alphabet, Position(80, 30) };
 
 	int time = 0;
 	auto bulletToFire = bullets.begin();
@@ -50,11 +93,7 @@ void Game()
 			if (counter == 0)
 			{
 				bulletToFire->setPosition(player.position);
-				++bulletToFire;
-				if (bulletToFire == bullets.end())
-				{
-					bulletToFire = bullets.begin();
-				}
+				bullets.next(bulletToFire);
 
 				counter = 15;
 			}

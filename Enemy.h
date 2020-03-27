@@ -2,7 +2,7 @@
 #include "GameComponent.h"
 #include <numbers>
 
-class Enemy : public GameComponent<Enemy>
+class Enemy : public GameComponent
 {
 private:
 	static int s_seed;
@@ -29,6 +29,11 @@ public:
 		this->init();
 	}
 
+	void draw()
+	{
+		DrawSprite(sprite, position.x, position.y, size.width, size.height, angle, 0xffffffff);
+	}
+
 	void tick(const Time time)
 	{
 		int dx = 0, dy = 0;
@@ -36,8 +41,8 @@ public:
 		const int n2 = time + seed + seed * seed + seed * seed * seed * 3;
 		if (((n1 >> 6) & 0x7) == 0x7)
 		{
-			dx += (1 - cos((n1 & 0x7f) / 64.0f * 2.f * std::numbers::pi)) * (20 + ((seed * seed) % 9));
-			dy += (sin((n1 & 0x7f) / 64.0f * 2.f * std::numbers::pi)) * (20 + ((seed * seed) % 9));
+			dx = (1 - cos((n1 & 0x7f) / 64.0f * 2.f * std::numbers::pi)) * (20 + ((seed * seed) % 9));
+			dy = (sin((n1 & 0x7f) / 64.0f * 2.f * std::numbers::pi)) * (20 + ((seed * seed) % 9));
 		}
 
 		if (((n2 >> 8) & 0xf) == 0xf)
@@ -47,6 +52,6 @@ public:
 
 		this->position = this->basePosition + Position(dx, dy);
 
-		DrawSprite(sprite, position.x, position.y, size.width, size.height, angle, 0xffffffff);
+		this->draw();
 	}
 };

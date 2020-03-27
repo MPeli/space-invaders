@@ -100,8 +100,11 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Begin.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Drawable.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="Frame.cpp" />
     <ClCompile Include="GameComponent.cpp" />
     <ClCompile Include="lib\leetlib.cpp" />
     <ClCompile Include="main.cpp" />
@@ -110,8 +113,11 @@
     <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Begin.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Drawable.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="Frame.h" />
     <ClInclude Include="GameComponent.h" />
     <ClInclude Include="lib\leetlib.h" />
     <ClInclude Include="Player.h" />

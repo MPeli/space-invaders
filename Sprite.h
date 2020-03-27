@@ -20,7 +20,7 @@ public:
 };
 
 // Sprites is a singleton class
-// It loads letters (a-z), numbers (0-9), invaders (littele and big) and the bullet
+// It loads letters (a-z), numbers (0-9), invaders (little and big) and the bullet
 class Sprites
 {
 private:

@@ -1,4 +1,5 @@
 #pragma once
+#include "Drawable.h"
 #include "Sprite.h"
 
 struct Coordinates
@@ -40,12 +41,10 @@ public:
 
 using Position = Coordinates;
 using Delta = Coordinates;
-using Time = int;
 using Angle = float;
 using Seed = int;
 
-template <typename T1>
-class GameComponent
+class GameComponent: public Drawable
 {
 public:
     Coordinates position;
@@ -54,10 +53,5 @@ public:
     Angle angle{};
 
 public:
-    GameComponent() {};
-    void tick(const Time currentTime)
-    {
-        T1& derived = static_cast<T1&>(*this);
-        derived.tick(currentTime);
-    }
+    virtual void tick(const Time currentTime) = 0;
 };
