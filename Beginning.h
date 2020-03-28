@@ -7,7 +7,7 @@
 class Beginning : public Slide
 {
 private:
-    Text text = { "welcome", sprites.alphabet, Position(300, 30) };
+    Text text = { "welcome", sprites.alphabet, Position(300, 30), Size(40, 40) };
 public:
     void tick(const Time currentTime) override
     {
@@ -18,7 +18,7 @@ public:
 class End : public Slide
 {
 private:
-    Text text = { "end", sprites.alphabet, Position(300, 30) };
+    Text text = { "end", sprites.alphabet, Position(300, 30), Size(40, 40) };
 public:
     void tick(const Time currentTime) override
     {
@@ -29,7 +29,7 @@ public:
 class Level01 : public Slide
 {
 private:
-    Text text = { "space invaders 2d", sprites.alphabet, Position(80, 30) };
+    Text text = { "space invaders 2d", sprites.alphabet, Position(80, 30), Size(40, 40) };
 public:
     Level01()
     {
