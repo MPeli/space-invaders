@@ -777,7 +777,7 @@ void DrawRectangle(float x1, float y1, float x2, float y2, DWORD col )
 }
 */
 
-void DrawSprite(void *sprite, float xcentre, float ycentre, float xsize, float ysize, float angle, DWORD col )
+void DrawSprite(void *sprite, float xcentre, float ycentre, float width, float height, float angle, DWORD col )
 {
 	SetCurrentTexture(sprite);
 	float c=cosf(angle);
@@ -788,11 +788,12 @@ void DrawSprite(void *sprite, float xcentre, float ycentre, float xsize, float y
 
 		///{ xcentre+xsize*c+ysize*s,ycentre+ysize*c-xsize*s , 0.5f, 1.0f, col, 0,0, }, // x, y, z, rhw, color
 		
-		{ ROTATE(-xsize,-ysize), 0.5f, 1.0f, col, 0,0, }, // x, y, z, rhw, color
-		{ ROTATE( xsize,-ysize), 0.5f, 1.0f, col, 1,0, },
-		{ ROTATE(-xsize, ysize), 0.5f, 1.0f, col, 0,1, },
-		{ ROTATE( xsize, ysize), 0.5f, 1.0f, col, 1,1, },
+		{ ROTATE(-width/2,-height/2), 0.5f, 1.0f, col, 0,0, }, // x, y, z, rhw, color
+		{ ROTATE( width/2,-height/2), 0.5f, 1.0f, col, 1,0, },
+		{ ROTATE(-width/2, height/2), 0.5f, 1.0f, col, 0,1, },
+		{ ROTATE( width/2, height/2), 0.5f, 1.0f, col, 1,1, },
 	};
+
 	g_pd3dDevice->DrawPrimitiveUP(D3DPT_TRIANGLESTRIP, 2, tea2, sizeof(CUSTOMVERTEX));
 }
 

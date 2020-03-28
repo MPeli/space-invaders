@@ -68,5 +68,5 @@ void Player::tick(const Time time)
     // this->angle = std::numbers::pi + sin(time * 0.1) * 0.1;
 
     DrawBoundingBox(minmax.first.x, minmax.first.y, minmax.second.x, minmax.second.y);
-    DrawSprite(sprite, position.x, position.y, size.width/2, size.height/2, angle, 0xffffffff);
+    DrawSprite(sprite, position.x, position.y, size.width, size.height, angle, 0xffffffff);
 }
