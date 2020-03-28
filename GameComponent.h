@@ -127,10 +127,10 @@ public:
         }
         else
         {
-            Position p0 = { this->position.x - this->size.width / 2, this->position.y - this->size.height / 2 };
-            Position p1 = { this->position.x + this->size.width / 2, this->position.y + this->size.height / 2 };
+            Position min = { this->position.x - this->size.width / 2, this->position.y - this->size.height / 2 };
+            Position max = { this->position.x + this->size.width / 2, this->position.y + this->size.height / 2 };
 
-            this->minmax = { p0, p1 };
+            this->minmax = { min, max };
         }
     }
 

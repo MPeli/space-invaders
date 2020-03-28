@@ -20,6 +20,7 @@
 #include <map>
 #include <direct.h>
 #include <malloc.h>
+#include "Dwmapi.h"
 //#include "resource.h"
 
 //#include "joypad.h"
@@ -29,6 +30,7 @@
 #pragma comment(lib,"lib/fmod/api/lib/fmodvc.lib")
 #pragma comment(lib,"d3d9.lib")
 #pragma comment(lib,"d3dx9.lib")
+#pragma comment(lib,"Dwmapi.lib")
 
 
 #pragma warning(disable:4244)
@@ -47,6 +49,8 @@ struct CUSTOMVERTEX
     DWORD color;        // The vertex color
 	float u,v;
 };
+// Line
+ID3DXLine* pLine = nullptr;
 
 // Our custom FVF, which describes our custom vertex structure
 #define D3DFVF_CUSTOMVERTEX (D3DFVF_XYZRHW|D3DFVF_DIFFUSE|D3DFVF_TEX1)
@@ -194,6 +198,11 @@ HRESULT InitD3D( HWND hWnd )
     }
 
     // Device state would normally be set here
+
+
+	// Line
+	D3DXCreateLine(g_pd3dDevice, &pLine);
+	pLine->SetWidth(1);
 
     return S_OK;
 }
@@ -610,6 +619,11 @@ INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR cmd, INT )
 						style, 0, 0, r.right-r.left, r.bottom-r.top,
 						GetDesktopWindow(), NULL, wc.hInstance, NULL);
 
+
+	//DWM_BLURBEHIND bb = { DWM_BB_ENABLE | DWM_BB_BLURREGION, true, CreateRectRgn(0, 0, -1, -1), true };
+	//SetLayeredWindowAttributes(hWnd, NULL, NULL, NULL);
+	//DwmEnableBlurBehindWindow(hWnd, &bb);
+
 	// Center the window
 	int xPos = (GetSystemMetrics(SM_CXSCREEN) - r.right) / 2;
 	int yPos = (GetSystemMetrics(SM_CYSCREEN) - r.bottom) / 2;
@@ -907,4 +921,27 @@ void ChangeVolume(int handle, float volume)
 	if (volume<=0) volume=0;
 	if (volume>1) volume=1;
 	FSOUND_SetVolume(handle, (int)(volume*255));
+}
+
+void DrawBoundingBox(float minx, float miny, float maxx, float maxy)
+{
+	D3DCOLOR color = D3DCOLOR_XRGB(255, 0, 0);
+	auto draw = [&color](float x0, float y0, float x1, float y1)
+	{
+		// Vector
+		D3DXVECTOR2 vLine[2];
+		vLine[0].x = x0;
+		vLine[0].y = y0;
+		vLine[1].x = x1;
+		vLine[1].y = y1;
+
+		pLine->Begin();
+		pLine->Draw(vLine, 2, color);
+		pLine->End();
+	};
+
+	draw(minx, miny, minx, maxy);
+	draw(minx, miny, maxx, miny);
+	draw(maxx, maxy, minx, maxy);
+	draw(maxx, maxy, maxx, miny);
 }

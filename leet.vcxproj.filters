@@ -58,6 +58,9 @@
     <ClCompile Include="Tickable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Sounds.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\leetlib.h">
@@ -99,5 +102,6 @@
     <ClInclude Include="Tickable.h">
       <Filter>Source Files</Filter>
     </ClInclude>
+    <ClInclude Include="Sounds.h" />
   </ItemGroup>
 </Project>

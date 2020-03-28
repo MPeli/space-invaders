@@ -1,6 +1,7 @@
 #pragma once
 #include "GameComponents.h"
 #include "Slide.h"
+#include "Sounds.h"
 #include "Text.h"
 
 class Beginning : public Slide
@@ -36,10 +37,10 @@ public:
 
         // 1 player
         player.position = Position(400, 550);
-        player.size = Size(50, 50);
+        player.size = Size(100, 100);
 
         // 10 bullets
-        bullets.emplace_back_multiple(10, sprites.bullet, Size(10, 10));
+        bullets.emplace_back_multiple(10, sprites.bullet, Size(20, 20));
 
         // 50 enemies
         enemies.emplace_back_multiple(50, sprites.enemy);
@@ -48,20 +49,6 @@ public:
     void tick(const Time currentTime) override
     {
         auto& [player, bullets, enemies] = GameComponents::get().getAllComponents();
-
-        player.tick(currentTime);
-
-        for (auto& bullet : bullets)
-        {
-            bullet.tick(currentTime);
-        }
-
-        for (auto& enemy : enemies)
-        {
-            enemy.tick(currentTime);
-        }
-
-        text.tick(currentTime);
 
         // Detect colitions
         for (auto& bullet : bullets)
@@ -77,16 +64,32 @@ public:
                         const auto& [min02, max02] = enemy.getBoundingBox();
 
                         // Colision detected
-                        if (max01.x > min02.x && min01.x < max02.x && max01.y > min01.y && min01.y < max02.y)
+
+                        if (max01.x > min02.x && min01.x < max02.x && max01.y > min02.y && min01.y < max02.y)
                         {
                             bullet.visible = false;
                             enemy.visible = false;
+                            Sounds::get().explode();
                             break;
                         }
                     }
                 }
             }
         }
+
+        player.tick(currentTime);
+
+        for (auto& bullet : bullets)
+        {
+            bullet.tick(currentTime);
+        }
+
+        for (auto& enemy : enemies)
+        {
+            enemy.tick(currentTime);
+        }
+
+        text.tick(currentTime);
     }
 };
 

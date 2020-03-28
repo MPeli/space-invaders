@@ -1,6 +1,7 @@
 #include "Player.h"
 
 #include "GameComponents.h"
+#include "Sounds.h"
 #include <algorithm>
 
 Player::Player(const Sprite& sprite, const Position position, const Size size) noexcept : GameComponent(sprite)
@@ -45,6 +46,8 @@ void Player::shoot(const Time time)
             bulletToFire->visible = true;
             bullets.next(bulletToFire);
 
+            Sounds::get().shoot();
+
             counter = 15;
         }
         else
@@ -64,5 +67,6 @@ void Player::tick(const Time time)
     this->shoot(time);
     // this->angle = std::numbers::pi + sin(time * 0.1) * 0.1;
 
-    DrawSprite(sprite, position.x, position.y, size.width, size.height, angle, 0xffffffff);
+    DrawBoundingBox(minmax.first.x, minmax.first.y, minmax.second.x, minmax.second.y);
+    DrawSprite(sprite, position.x, position.y, size.width/2, size.height/2, angle, 0xffffffff);
 }

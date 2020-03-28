@@ -18,7 +18,7 @@ void Enemy::init() noexcept
 {
 	this->seed = Enemy::s_seed;
 	this->basePosition = { (seed % 10) * 60 + 120.f, (seed / 10) * 60 + 70.f };
-	this->size = { (10 + ((seed) % 17)), (10 + ((seed) % 17)) };
+	this->size = { (10 + ((seed) % 17))*2, (10 + ((seed) % 17))*2 };
 
 	++Enemy::s_seed;
 }
