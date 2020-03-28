@@ -11,7 +11,7 @@
     <Filter Include="Source Files\GameComponents">
       <UniqueIdentifier>{f081bdaa-a4b6-4044-9881-c8e39f123edf}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Source Files\Frames">
+    <Filter Include="Source Files\Slides">
       <UniqueIdentifier>{1728aaa0-800d-46c9-b9c6-5b87818ec57b}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
@@ -40,13 +40,22 @@
     <ClCompile Include="Text.cpp">
       <Filter>Source Files\GameComponents</Filter>
     </ClCompile>
-    <ClCompile Include="Begin.cpp">
-      <Filter>Source Files\Frames</Filter>
+    <ClCompile Include="Beginning.cpp">
+      <Filter>Source Files\Slides</Filter>
     </ClCompile>
-    <ClCompile Include="Frame.cpp">
-      <Filter>Source Files\Frames</Filter>
+    <ClCompile Include="Slide.cpp">
+      <Filter>Source Files\Slides</Filter>
     </ClCompile>
-    <ClCompile Include="Drawable.cpp">
+    <ClCompile Include="Projector.cpp">
+      <Filter>Source Files\Slides</Filter>
+    </ClCompile>
+    <ClCompile Include="Container.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GameComponents.cpp">
+      <Filter>Source Files\GameComponents</Filter>
+    </ClCompile>
+    <ClCompile Include="Tickable.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -72,13 +81,22 @@
     <ClInclude Include="Text.h">
       <Filter>Source Files\GameComponents</Filter>
     </ClInclude>
-    <ClInclude Include="Begin.h">
-      <Filter>Source Files\Frames</Filter>
+    <ClInclude Include="Beginning.h">
+      <Filter>Source Files\Slides</Filter>
     </ClInclude>
-    <ClInclude Include="Frame.h">
-      <Filter>Source Files\Frames</Filter>
+    <ClInclude Include="Slide.h">
+      <Filter>Source Files\Slides</Filter>
     </ClInclude>
-    <ClInclude Include="Drawable.h">
+    <ClInclude Include="Projector.h">
+      <Filter>Source Files\Slides</Filter>
+    </ClInclude>
+    <ClInclude Include="Container.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="GameComponents.h">
+      <Filter>Source Files\GameComponents</Filter>
+    </ClInclude>
+    <ClInclude Include="Tickable.h">
       <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -24,10 +24,7 @@ public:
 class Sprites
 {
 private:
-    Sprites()
-    {
-        this->loadSprites();
-    }
+    Sprites();
 
 public:
     const Sprite enemy = "gfx/invaders/little.png";
@@ -36,30 +33,16 @@ public:
 
     std::unordered_map<char, Sprite> alphabet;
 
-    static Sprites& getSprites()
+    static Sprites& get()
     {
         static Sprites sprites;
         return sprites;
     }
 
-    void loadSprites()
-    {
-        std::string root = "gfx";
-
-        // load letters
-        for (char letter = 'a'; letter <= 'z'; ++letter)
-        {
-            this->alphabet.emplace(letter, (root + "/alphabet/letters/" + letter + ".png").c_str());
-        }
-
-        // load numbers
-        for (char number = '0'; number <= '9'; ++number)
-        {
-            this->alphabet.emplace(number, (root + "/alphabet/numbers/" + number + ".png").c_str());
-        }
-    }
+    void loadSprites();
 
     // do not allow any copies
     Sprites(const Sprites&) = delete;
     void operator=(const Sprites&) = delete;
+    void operator=(const Sprites&&) = delete;
 };

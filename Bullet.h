@@ -1,30 +1,13 @@
 #pragma once
 #include "GameComponent.h"
+#include "Sprite.h"
 
 class Bullet : public GameComponent
 {
 public:
-    const Sprite& sprite;
-    Bullet(const Sprite& sprite, const Size size) noexcept : sprite(sprite)
-    {
-        this->size = size;
-    }
+    Bullet(const Sprite& sprite, const Size size) noexcept;
 
-    void draw()
-    {
-        DrawSprite(sprite, position.x, position.y, size.width, size.height, angle, 0xffffffff);
-    }
-
-    void setPosition(const Position position)
-    {
-        this->position = position;
-    }
-
-    void tick(const Time currentTime)
-    {
-        this->position.y -= 4;
-        this->angle += 0.1f;
-
-        this->draw();
-    }
+    void setDirection(const Direction direction);
+    void setPosition(const Position position);
+    void tick(const Time currentTime) override;
 };

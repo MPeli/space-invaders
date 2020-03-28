@@ -1,8 +1,10 @@
 #pragma once
-class Drawable
+#include "Sprite.h"
+
+class Tickable
 {
 public:
-    using Time = int;
+    using Time = long long int;
     virtual void tick(const Time currentTime) = 0;
 };
 

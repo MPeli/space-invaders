@@ -100,11 +100,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Begin.cpp" />
+    <ClCompile Include="Beginning.cpp" />
     <ClCompile Include="Bullet.cpp" />
-    <ClCompile Include="Drawable.cpp" />
+    <ClCompile Include="Container.cpp" />
+    <ClCompile Include="Tickable.cpp" />
     <ClCompile Include="Enemy.cpp" />
-    <ClCompile Include="Frame.cpp" />
+    <ClCompile Include="GameComponents.cpp" />
+    <ClCompile Include="Projector.cpp" />
+    <ClCompile Include="Slide.cpp" />
     <ClCompile Include="GameComponent.cpp" />
     <ClCompile Include="lib\leetlib.cpp" />
     <ClCompile Include="main.cpp" />
@@ -113,11 +116,14 @@
     <ClCompile Include="Text.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Begin.h" />
+    <ClInclude Include="Beginning.h" />
     <ClInclude Include="Bullet.h" />
-    <ClInclude Include="Drawable.h" />
+    <ClInclude Include="Container.h" />
+    <ClInclude Include="Tickable.h" />
     <ClInclude Include="Enemy.h" />
-    <ClInclude Include="Frame.h" />
+    <ClInclude Include="GameComponents.h" />
+    <ClInclude Include="Projector.h" />
+    <ClInclude Include="Slide.h" />
     <ClInclude Include="GameComponent.h" />
     <ClInclude Include="lib\leetlib.h" />
     <ClInclude Include="Player.h" />

@@ -589,42 +589,49 @@ HWND hWnd;
 //-----------------------------------------------------------------------------
 INT WINAPI WinMain( HINSTANCE hInst, HINSTANCE, LPSTR cmd, INT )
 {
-	int id = MessageBox(NULL,"fullscreen?","answer me!",MB_YESNOCANCEL);
-	if (id==IDCANCEL) return 0;
-	fullscreen=(id==IDYES);
+	int id = MessageBox(NULL, "Do you want to play the game in fullscreen mode?", "Game mode", MB_YESNOCANCEL);
+	if (id == IDCANCEL) return 0;
+	fullscreen = (id == IDYES);
 
     // Register the window class
     WNDCLASSEX wc = { sizeof(WNDCLASSEX), CS_CLASSDC, MsgProc, 0L, 0L,
                       GetModuleHandle(NULL), NULL, NULL, NULL, NULL,
                       "crapcrap", NULL };
+
     RegisterClassEx( &wc );
 
-	RECT r={0,0,800,600};
+	RECT r = { 0, 0, 800, 600 };
 	int style = fullscreen ? WS_POPUP : WS_OVERLAPPEDWINDOW;
-	style|=WS_VISIBLE;
-AdjustWindowRect(&r,style,false);
+	style |= WS_VISIBLE;
+	AdjustWindowRect(&r, style, false);
 
     // Create the application's window
-     hWnd = CreateWindow( "crapcrap", "crap crap",
-                              style, 0,0,r.right-r.left,r.bottom-r.top,
-                              GetDesktopWindow(), NULL, wc.hInstance, NULL );
+    hWnd = CreateWindow("crapcrap", "The Space Invaders 2D",
+						style, 0, 0, r.right-r.left, r.bottom-r.top,
+						GetDesktopWindow(), NULL, wc.hInstance, NULL);
+
+	// Center the window
+	int xPos = (GetSystemMetrics(SM_CXSCREEN) - r.right) / 2;
+	int yPos = (GetSystemMetrics(SM_CYSCREEN) - r.bottom) / 2;
+
+	SetWindowPos(hWnd, 0, xPos, yPos, 0, 0, SWP_NOZORDER | SWP_NOSIZE);
 	
-	 FSOUND_Init(44100, 42, 0);
+	FSOUND_Init(44100, 42, 0);
 
 	QueryPerformanceCounter(&starttime);
 	QueryPerformanceFrequency(&freq);
     // Initialize Direct3D
-    if( SUCCEEDED( InitD3D( hWnd ) ) )
+	if (SUCCEEDED(InitD3D(hWnd)))
     {
         // Create the vertex buffer
-        if( SUCCEEDED( InitVB() ) )
+		if (SUCCEEDED(InitVB()))
         {
 			//SetWindowPos(hWnd,NULL,0,0,1024,768,SWP_NOZORDER|SWP_NOACTIVATE|SWP_NOMOVE|SWP_ASYNCWINDOWPOS);
 			SetCursor(LoadCursor(NULL,IDC_ARROW));
 
             // Show the window
-            ShowWindow( hWnd, SW_SHOWDEFAULT );
-            UpdateWindow( hWnd );
+			ShowWindow(hWnd, SW_SHOWDEFAULT);
+			UpdateWindow(hWnd);
 
 			//InitDirectInput( hWnd );			
 			
@@ -632,7 +639,7 @@ AdjustWindowRect(&r,style,false);
         }
     }
 
-    UnregisterClass( "crapcrap", wc.hInstance );
+	UnregisterClass("crapcrap", wc.hInstance);
     return 0;
 }
 
