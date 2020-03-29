@@ -7,19 +7,26 @@
 #include "Enemy.h"
 #include "Player.h"
 #include "Sprite.h"
+#include "Sounds.h"
 #include "Text.h"
+#include "Logger.h"
 
 void Game()
 {
+	Logger::get() << "The game has started";
+
 	Beginning frame01;
 	Level01 level01;
+
+	Sounds::get().setVolume(0.01);
 
 	long long int time = 0;
 	while (!WantQuit() && !IsKeyDown(VK_ESCAPE))
 	{
 		++time;
 
-		level01.tick(time);
+		frame01.tick(time);
+		Sounds::get().tick(time);
 
 		Flip();
 	}

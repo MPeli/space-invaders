@@ -7,18 +7,26 @@
 class Beginning : public Slide
 {
 private:
-    Text text = { "welcome", sprites.alphabet, Position(300, 30), Size(40, 40) };
+    std::vector<Text> texts = {
+        { "welcome", sprites.alphabet, Position(400, 100), Text::Alignment::center, Size(40, 40) },
+        { "use a w s d", sprites.alphabet, Position(400, 200), Text::Alignment::center, Size(40, 40) },
+        { "and", sprites.alphabet, Position(400, 300), Text::Alignment::center, Size(40, 40) },
+        { "your mouse", sprites.alphabet, Position(400, 400), Text::Alignment::center, Size(40, 40) }
+    };
 public:
     void tick(const Time currentTime) override
     {
-        text.tick(currentTime);
+        for (auto& text : texts)
+        {
+            text.tick(currentTime);
+        }
     }
 };
 
 class End : public Slide
 {
 private:
-    Text text = { "end", sprites.alphabet, Position(300, 30), Size(40, 40) };
+    Text text = { "end", sprites.alphabet, Position(300, 30), Text::Alignment::center, Size(40, 40) };
 public:
     void tick(const Time currentTime) override
     {
@@ -29,7 +37,7 @@ public:
 class Level01 : public Slide
 {
 private:
-    Text text = { "space invaders 2d", sprites.alphabet, Position(80, 30), Size(40, 40) };
+    Text text = { "space invaders 2d", sprites.alphabet, Position(80, 30), Text::Alignment::left, Size(40, 40) };
 public:
     Level01()
     {

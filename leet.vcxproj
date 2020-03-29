@@ -103,6 +103,7 @@
     <ClCompile Include="Beginning.cpp" />
     <ClCompile Include="Bullet.cpp" />
     <ClCompile Include="Container.cpp" />
+    <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Sounds.cpp" />
     <ClCompile Include="Tickable.cpp" />
     <ClCompile Include="Enemy.cpp" />
@@ -120,6 +121,7 @@
     <ClInclude Include="Beginning.h" />
     <ClInclude Include="Bullet.h" />
     <ClInclude Include="Container.h" />
+    <ClInclude Include="Logger.h" />
     <ClInclude Include="Sounds.h" />
     <ClInclude Include="Tickable.h" />
     <ClInclude Include="Enemy.h" />
