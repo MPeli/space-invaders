@@ -4,11 +4,9 @@
 #include "End.h"
 #include "Logger.h"
 
-Projector::Projector()
+Projector::Projector() : sprites(Sprites::get())
 {
     Logger::get() << "Initializing projector...\n";
-
-    Sprites& sprites = GameComponents::get().getSprites();
 
     this->slides.emplace(SlideType::beginning, std::make_unique<Beginning>());
     this->slides.emplace(SlideType::level01, std::make_unique<Level01>());

@@ -1,5 +1,9 @@
 #pragma once
-#include "GameComponent.h"
+
+#include "Vector2D.h"
+#include "Tickable.h"
+#include "Sprite.h"
+
 #include <string_view>
 #include <unordered_map>
 
@@ -12,7 +16,7 @@ public:
         center
     };
 
-    Text(std::string_view text, std::unordered_map<char, Sprite>& alphabet, const Position position, const Alignment alignment, const const Size size) noexcept;
+    Text(std::string_view text, std::unordered_map<char, Sprite>& alphabet, const Position position, const Alignment alignment, const Size size) noexcept;
 
     void tick(const Time time) override;
 

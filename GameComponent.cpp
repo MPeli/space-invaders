@@ -1,5 +1,7 @@
 #include "GameComponent.h"
 
+#include <algorithm>
+
 GameComponent::GameComponent(const Sprite& sprite) : sprite(sprite)
 {
 

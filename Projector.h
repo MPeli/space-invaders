@@ -11,12 +11,14 @@ class Projector : public Singleton<Projector>, public Tickable
 {
     friend Singleton<Projector>;
 public:
-    Projector();
 
     void reset();
     void tick(const Time time) override;
 
 private:
+    Projector();
+    
+    Sprites& sprites;
     SlideType activeSlide = SlideType::beginning;
 
     std::unordered_map<SlideType, std::unique_ptr<Slide>> slides;

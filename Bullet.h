@@ -1,6 +1,5 @@
 #pragma once
 #include "GameComponent.h"
-#include "Sprite.h"
 
 class Bullet : public GameComponent
 {

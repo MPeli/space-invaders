@@ -21,15 +21,13 @@ public:
 
     Container<Bullet>& getBullets();
 
-    Sprites& getSprites() noexcept;
     Sounds& getSound() noexcept;
 
 private:
-    Sprites sprites;
     Sounds sounds;
-    Player player = { sprites.player, Position(0, 0), Size(0, 0) };
+    Player player = { Sprites::get().player, Position(0, 0), Size(0, 0) };
     Container<Bullet> bullets;
     Container<Enemy> enemies;
 
-    GameComponents() = default;
+    GameComponents();
 };

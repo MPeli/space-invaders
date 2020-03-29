@@ -1,4 +1,6 @@
 #include "Text.h"
+#include <string>
+#include "lib/leetlib.h"
 
 Text::Text(std::string_view text, std::unordered_map<char, Sprite>& alphabet, const Position position, const Alignment alignment, const Size size) noexcept : text(text), alphabet(alphabet), alignment(alignment), size(size)
 {

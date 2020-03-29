@@ -1,6 +1,8 @@
 #include "Level01.h"
 #include "Logger.h"
 
+#include <algorithm>
+
 Level01::Level01()
 {
     Logger::get() << "Initializing the level01 slide...\n";
@@ -60,21 +62,29 @@ void Level01::tick(const Time currentTime)
 {
     const auto& [player, bullets, enemies] = GameComponents::get().getAllComponents();
 
+    static auto collide = [](const std::pair<Vector2D, Vector2D>& left, const std::pair<Vector2D, Vector2D>& right)
+    {
+        const auto& [min01, max01] = left;
+        const auto& [min02, max02] = right;
+
+        return max01.x > min02.x && min01.x < max02.x&& max01.y > min02.y && min01.y < max02.y;
+    };
+
     // Detect colitions, one bullet can kill only one enemy
     for (auto& bullet : bullets)
     {
         if (bullet.visible)
         {
-            const auto& [min01, max01] = bullet.getBoundingBox();
+            const auto& bulletMinMax = bullet.getBoundingBox();
 
             for (auto& enemy : enemies)
             {
                 if (enemy.visible)
                 {
-                    const auto& [min02, max02] = enemy.getBoundingBox();
+                    const auto& enemyMinMax = enemy.getBoundingBox();
 
                     // Colision detected
-                    if (max01.x > min02.x && min01.x < max02.x && max01.y > min02.y && min01.y < max02.y)
+                    if (collide(bulletMinMax, enemyMinMax))
                     {
                         bullet.visible = false;
                         enemy.visible = false;
@@ -82,6 +92,22 @@ void Level01::tick(const Time currentTime)
                         break;
                     }
                 }
+            }
+        }
+    }
+
+    // Collision detection, was the player attacked?
+    for (auto& enemy : enemies)
+    {
+        if (enemy.visible)
+        {
+            const auto& enemyMinMax = enemy.getBoundingBox();
+
+            // Colision detected
+            if (collide(enemyMinMax, player.getBoundingBox()))
+            {
+                GameComponents::get().getSound().explode();
+                break;
             }
         }
     }

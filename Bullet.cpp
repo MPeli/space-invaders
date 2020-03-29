@@ -1,6 +1,5 @@
 #include "Bullet.h"
 
-
 Bullet::Bullet(const Sprite& sprite, const Size size) noexcept : GameComponent(sprite)
 {
     this->size = size;

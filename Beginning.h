@@ -1,8 +1,9 @@
 #pragma once
-#include "GameComponents.h"
+#include "Vector2D.h"
 #include "Slide.h"
-#include "Sounds.h"
 #include "Text.h"
+
+#include <vector>
 
 class Beginning : public Slide
 {

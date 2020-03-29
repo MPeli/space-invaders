@@ -1,6 +1,7 @@
 #pragma once
 #include <unordered_map>
 #include "lib/leetlib.h"
+#include "Singleton.h"
 
 class Sprite
 {
@@ -20,8 +21,9 @@ public:
 };
 
 // It loads letters (a-z), numbers (0-9), invaders (little and big) and the bullet
-class Sprites
+class Sprites : public Singleton<Sprites>
 {
+    friend Singleton<Sprites>;
 public:
     const Sprite enemy = "gfx/invaders/little.png";
     const Sprite player = "gfx/invaders/big.png";
@@ -29,6 +31,7 @@ public:
 
     std::unordered_map<char, Sprite> alphabet;
 
-    Sprites();
     void loadSprites();
+private:
+    Sprites();
 };
