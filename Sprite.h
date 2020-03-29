@@ -19,13 +19,9 @@ public:
     }
 };
 
-// Sprites is a singleton class
 // It loads letters (a-z), numbers (0-9), invaders (little and big) and the bullet
 class Sprites
 {
-private:
-    Sprites();
-
 public:
     const Sprite enemy = "gfx/invaders/little.png";
     const Sprite player = "gfx/invaders/big.png";
@@ -33,16 +29,6 @@ public:
 
     std::unordered_map<char, Sprite> alphabet;
 
-    static Sprites& get()
-    {
-        static Sprites sprites;
-        return sprites;
-    }
-
+    Sprites();
     void loadSprites();
-
-    // do not allow any copies
-    Sprites(const Sprites&) = delete;
-    void operator=(const Sprites&) = delete;
-    void operator=(const Sprites&&) = delete;
 };

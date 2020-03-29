@@ -1,7 +1,9 @@
 #pragma once
 #include "GameComponent.h"
+#include <string_view>
+#include <unordered_map>
 
-class Text : Tickable
+class Text : public Tickable
 {
 public:
     enum class Alignment

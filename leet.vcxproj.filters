@@ -46,9 +46,6 @@
     <ClCompile Include="Slide.cpp">
       <Filter>Source Files\Slides</Filter>
     </ClCompile>
-    <ClCompile Include="Projector.cpp">
-      <Filter>Source Files\Slides</Filter>
-    </ClCompile>
     <ClCompile Include="Container.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
@@ -63,6 +60,15 @@
     </ClCompile>
     <ClCompile Include="Logger.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="End.cpp">
+      <Filter>Source Files\Slides</Filter>
+    </ClCompile>
+    <ClCompile Include="Level01.cpp">
+      <Filter>Source Files\Slides</Filter>
+    </ClCompile>
+    <ClCompile Include="Projector.cpp">
+      <Filter>Source Files\Slides</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -93,9 +99,6 @@
     <ClInclude Include="Slide.h">
       <Filter>Source Files\Slides</Filter>
     </ClInclude>
-    <ClInclude Include="Projector.h">
-      <Filter>Source Files\Slides</Filter>
-    </ClInclude>
     <ClInclude Include="Container.h">
       <Filter>Source Files</Filter>
     </ClInclude>
@@ -110,6 +113,18 @@
     </ClInclude>
     <ClInclude Include="Sounds.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="End.h">
+      <Filter>Source Files\Slides</Filter>
+    </ClInclude>
+    <ClInclude Include="Level01.h">
+      <Filter>Source Files\Slides</Filter>
+    </ClInclude>
+    <ClInclude Include="Singleton.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Projector.h">
+      <Filter>Source Files\Slides</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

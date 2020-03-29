@@ -1,17 +1,23 @@
 #pragma once
 #include <memory>
-#include <vector>
+#include <unordered_map>
 
-#include "Beginning.h"
+#include "Singleton.h"
 #include "Slide.h"
+#include "Sprite.h"
+#include "Tickable.h"
 
-class Projector
+class Projector : public Singleton<Projector>, public Tickable
 {
-private:
-    std::vector<std::unique_ptr<Slide>> slides = {
-        std::make_unique<Beginning>(),
-        std::make_unique<Level01>(),
-        std::make_unique<End>()
-    };
-};
+    friend Singleton<Projector>;
+public:
+    Projector();
 
+    void reset();
+    void tick(const Time time) override;
+
+private:
+    SlideType activeSlide = SlideType::beginning;
+
+    std::unordered_map<SlideType, std::unique_ptr<Slide>> slides;
+};

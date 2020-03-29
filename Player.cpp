@@ -3,6 +3,7 @@
 #include "GameComponents.h"
 #include "Sounds.h"
 #include <algorithm>
+#include <numbers>
 
 Player::Player(const Sprite& sprite, const Position position, const Size size) noexcept : GameComponent(sprite)
 {
@@ -46,7 +47,7 @@ void Player::shoot(const Time time)
             bulletToFire->visible = true;
             bullets.next(bulletToFire);
 
-            Sounds::get().shoot();
+            GameComponents::get().getSound().shoot();
 
             counter = 15;
         }

@@ -15,6 +15,7 @@ private:
 public:
 	Enemy(const Sprite& sprite) noexcept;
 	Enemy(const Enemy& copy) noexcept;
-
+	
+	void reset() noexcept;
 	void tick(const Time time);
 };

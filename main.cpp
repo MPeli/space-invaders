@@ -1,35 +1,31 @@
 #include "lib/leetlib.h"
 
-#include "GameComponent.h"
-#include "Beginning.h"
-#include "Bullet.h"
-#include "Container.h"
-#include "Enemy.h"
-#include "Player.h"
-#include "Sprite.h"
+#include "GameComponents.h"
 #include "Sounds.h"
-#include "Text.h"
 #include "Logger.h"
+#include "Projector.h"
+
+#include "Slide.h"
+
+SlideType a;
 
 void Game()
 {
-	Logger::get() << "The game has started";
+	Logger::get() << "The game has started \n";
 
-	Beginning frame01;
-	Level01 level01;
-
-	Sounds::get().setVolume(0.01);
+	GameComponents::get().getSound().setVolume(0.01);
 
 	long long int time = 0;
 	while (!WantQuit() && !IsKeyDown(VK_ESCAPE))
 	{
 		++time;
-
-		frame01.tick(time);
-		Sounds::get().tick(time);
+		Projector::get().tick(time);
+		GameComponents::get().getSound().tick(time);
 
 		Flip();
 	}
+
+	Logger::get() << "The game has ended \n";
 }
 
 void OldGame()

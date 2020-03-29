@@ -17,10 +17,15 @@ Enemy::Enemy(const Enemy& copy) noexcept : GameComponent(copy.sprite)
 void Enemy::init() noexcept
 {
 	this->seed = Enemy::s_seed;
-	this->basePosition = { (seed % 10) * 60 + 120.f, (seed / 10) * 60 + 70.f };
-	this->size = { (10 + ((seed) % 17))*2, (10 + ((seed) % 17))*2 };
-
+	this->reset();
 	++Enemy::s_seed;
+}
+
+void Enemy::reset() noexcept
+{
+	this->basePosition = { (seed % 10) * 60 + 120.f, (seed / 10) * 60 + 70.f };
+	this->size = { (10 + ((seed) % 17)) * 2, (10 + ((seed) % 17)) * 2 };
+	this->visible = true;
 }
 
 void Enemy::tick(const Time time)
