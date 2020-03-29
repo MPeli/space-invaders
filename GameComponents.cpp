@@ -21,3 +21,9 @@ Sounds& GameComponents::getSound() noexcept
 {
     return this->sounds;
 }
+
+
+Score& GameComponents::getScore() noexcept
+{
+    return this->score;
+}

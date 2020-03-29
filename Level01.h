@@ -15,5 +15,5 @@ public:
     void tick(const Time currentTime) override;
 
 private:
-    Text text = { "space invaders 2d", sprites.alphabet, Position(80, 30), Text::Alignment::left, Size(40, 40) };
+    Text text = { "score", sprites.alphabet, Position(80, 30), Text::Alignment::left, Size(40, 40) };
 };

@@ -11,9 +11,8 @@ public:
 
     void tick(const Time time) override;
 
-    operator std::string() const;
-
 private:
     long int score = 0;
-    Text text = { "", Sprites::get().alphabet, Position(400, 200), Text::Alignment::center, Size(40, 40) };
+    std::string textScore;
+    Text text = { "", Sprites::get().alphabet, Position(720, 30), Text::Alignment::right, Size(40, 40) };
 };

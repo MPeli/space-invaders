@@ -60,6 +60,8 @@ void Level01::reset()
 
 void Level01::tick(const Time currentTime)
 {
+    auto& score = GameComponents::get().getScore();
+
     const auto& [player, bullets, enemies] = GameComponents::get().getAllComponents();
 
     static auto collide = [](const std::pair<Vector2D, Vector2D>& left, const std::pair<Vector2D, Vector2D>& right)
@@ -88,6 +90,9 @@ void Level01::tick(const Time currentTime)
                     {
                         bullet.visible = false;
                         enemy.visible = false;
+                        
+                        score.addPoints(100 * enemy.size.width);
+
                         GameComponents::get().getSound().explode();
                         break;
                     }
@@ -125,4 +130,5 @@ void Level01::tick(const Time currentTime)
     }
 
     text.tick(currentTime);
+    score.tick(currentTime);
 }

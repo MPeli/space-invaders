@@ -8,10 +8,7 @@ void Score::addPoints(const int points)
 
 void Score::tick(const Time time)
 {
-
-}
-
-Score::operator std::string() const
-{
-    return std::to_string(this->score);
+    this->textScore = std::to_string(this->score);
+    text.setText(this->textScore);
+    text.tick(time);
 }

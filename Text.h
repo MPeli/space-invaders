@@ -13,12 +13,14 @@ public:
     enum class Alignment
     {
         left,
+        right,
         center
     };
 
     Text(std::string_view text, std::unordered_map<char, Sprite>& alphabet, const Position position, const Alignment alignment, const Size size) noexcept;
 
     void tick(const Time time) override;
+    void setText(const std::string_view string);
 
 private:
     Vector2D position;
