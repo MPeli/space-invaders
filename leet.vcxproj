@@ -146,10 +146,18 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Beginning.cpp" />
+    <ClCompile Include="BetweenLevels.cpp" />
+    <ClCompile Include="Brain.cpp" />
     <ClCompile Include="Bullet.cpp" />
+    <ClCompile Include="Canvas.cpp" />
+    <ClCompile Include="Classic.cpp" />
+    <ClCompile Include="CollisionDetector.cpp" />
     <ClCompile Include="Container.cpp" />
     <ClCompile Include="End.cpp" />
+    <ClCompile Include="Chaos.cpp" />
+    <ClCompile Include="Level.cpp" />
     <ClCompile Include="Level01.cpp" />
+    <ClCompile Include="Level02.cpp" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="Projector.cpp" />
     <ClCompile Include="Score.cpp" />
@@ -168,10 +176,18 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Beginning.h" />
+    <ClInclude Include="BetweenLevels.h" />
+    <ClInclude Include="Brain.h" />
     <ClInclude Include="Bullet.h" />
+    <ClInclude Include="Canvas.h" />
+    <ClInclude Include="Classic.h" />
+    <ClInclude Include="CollisionDetector.h" />
     <ClInclude Include="Container.h" />
     <ClInclude Include="End.h" />
+    <ClInclude Include="Chaos.h" />
+    <ClInclude Include="Level.h" />
     <ClInclude Include="Level01.h" />
+    <ClInclude Include="Level02.h" />
     <ClInclude Include="Logger.h" />
     <ClInclude Include="Projector.h" />
     <ClInclude Include="Score.h" />

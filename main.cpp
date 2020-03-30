@@ -7,8 +7,6 @@
 
 #include "Slide.h"
 
-SlideType a;
-
 void Game()
 {
 	Logger::get() << "The game has started \n";

@@ -1,4 +1,5 @@
 #pragma once
+#include <utility>
 
 class Vector2D
 {
@@ -40,3 +41,4 @@ using Delta = Vector2D;
 using Direction = Vector2D;
 using Angle = float;
 using Seed = int;
+using BoundingBox = std::pair<Vector2D, Vector2D>;

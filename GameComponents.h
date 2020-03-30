@@ -12,6 +12,7 @@
 #include "Projector.h"
 
 #include <tuple>
+#include "Canvas.h"
 
 class GameComponents : public Singleton<GameComponents>
 {
@@ -24,10 +25,12 @@ public:
 
     Sounds& getSound() noexcept;
     Score& getScore() noexcept;
+    const Canvas& getCanvas() noexcept;
 
 private:
     Sounds sounds;
     Score score;
+    Canvas canvas;
     Player player = { Sprites::get().player, Position(0, 0), Size(0, 0) };
     Container<Bullet> bullets;
     Container<Enemy> enemies;

@@ -12,6 +12,8 @@ public:
     const Sprite& sprite;
 
 public:
+    static int s_seed;
+    Seed seed;
     Vector2D direction;
     Vector2D position;
     Vector2D basePosition;

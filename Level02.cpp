@@ -1,17 +1,18 @@
-#include "Level01.h"
+#include "Level02.h"
 #include "Logger.h"
+#include "Chaos.h"
+
+#include "GameComponents.h"
 
 #include <algorithm>
-#include "Classic.h"
-#include "CollisionDetector.h"
 
-Level01::Level01()
+Level02::Level02()
 {
-    Logger::get() << "Initializing the level01 slide...\n";
-    this->brain = std::make_unique<Classic>();
+    Logger::get() << "Initializing the level02 slide...\n";
+    this->brain = std::make_unique<Chaos>();
 }
 
-SlideType Level01::getNextSlide()
+SlideType Level02::getNextSlide()
 {
     const auto& [player, bullets, enemies] = GameComponents::get().getAllComponents();
 
@@ -22,8 +23,8 @@ SlideType Level01::getNextSlide()
 
     if (allDead)
     {
-        return SlideType::betweenLevels;
+        return SlideType::end;
     }
 
-    return SlideType::level01;
+    return SlideType::level02;
 }

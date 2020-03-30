@@ -1,12 +1,11 @@
 #pragma once
-
 #include "Brain.h"
 #include "Classic.h"
 #include "Level.h"
 
-class Level01 : public Level
+class Level02 : public Level
 {
 public:
-    Level01();
+    Level02();
     SlideType getNextSlide() override;
 };

@@ -28,6 +28,8 @@ void Player::move() noexcept
     this->direction.normalize();
     this->angle = this->direction.getAngle();
 
+    GameComponents::get().getCanvas().moveIn(*this);
+
     // Compute bounding box
     this->recomputeBoundingBox();
 }

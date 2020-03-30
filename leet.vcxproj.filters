@@ -17,6 +17,9 @@
     <Filter Include="Source Files\Assets">
       <UniqueIdentifier>{5ab443e3-d89f-4da7-a995-eaff46bd53cd}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Source Files\GameComponents\Brains">
+      <UniqueIdentifier>{afcd90e4-94d7-4a5e-b8e4-3ef7885385ef}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -79,6 +82,30 @@
     <ClCompile Include="Vector2D.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Canvas.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level02.cpp">
+      <Filter>Source Files\Slides</Filter>
+    </ClCompile>
+    <ClCompile Include="Classic.cpp">
+      <Filter>Source Files\GameComponents\Brains</Filter>
+    </ClCompile>
+    <ClCompile Include="Chaos.cpp">
+      <Filter>Source Files\GameComponents\Brains</Filter>
+    </ClCompile>
+    <ClCompile Include="CollisionDetector.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="BetweenLevels.cpp">
+      <Filter>Source Files\Slides</Filter>
+    </ClCompile>
+    <ClCompile Include="Brain.cpp">
+      <Filter>Source Files\GameComponents\Brains</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="lib\leetlib.h">
@@ -140,6 +167,26 @@
     </ClInclude>
     <ClInclude Include="Vector2D.h">
       <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Canvas.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Level02.h">
+      <Filter>Source Files\Slides</Filter>
+    </ClInclude>
+    <ClInclude Include="Classic.h">
+      <Filter>Source Files\GameComponents\Brains</Filter>
+    </ClInclude>
+    <ClInclude Include="Chaos.h">
+      <Filter>Source Files\GameComponents\Brains</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetector.h" />
+    <ClInclude Include="Level.h" />
+    <ClInclude Include="BetweenLevels.h">
+      <Filter>Source Files\Slides</Filter>
+    </ClInclude>
+    <ClInclude Include="Brain.h">
+      <Filter>Source Files\GameComponents\Brains</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -2,9 +2,11 @@
 
 #include <algorithm>
 
+int GameComponent::s_seed = 0;
+
 GameComponent::GameComponent(const Sprite& sprite) : sprite(sprite)
 {
-
+    this->seed = GameComponent::s_seed;
 }
 
 void GameComponent::draw()

@@ -7,9 +7,6 @@
 class Enemy : public GameComponent
 {
 private:
-	static int s_seed;
-	Seed seed;
-
 	void init() noexcept;
 
 public:

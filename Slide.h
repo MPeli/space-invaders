@@ -7,6 +7,8 @@ enum class SlideType
 {
     beginning,
     level01,
+    betweenLevels,
+    level02,
     end
 };
 
