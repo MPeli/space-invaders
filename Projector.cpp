@@ -42,6 +42,7 @@ void Projector::tick(const Time time)
 
     if (newSlide != this->activeSlide)
     {
+        auto search = this->slides.find(newSlide);
         search->second->reset();
         this->activeSlide = newSlide;
     }

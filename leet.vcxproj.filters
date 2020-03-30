@@ -97,14 +97,17 @@
     <ClCompile Include="CollisionDetector.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="Level.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="BetweenLevels.cpp">
       <Filter>Source Files\Slides</Filter>
     </ClCompile>
     <ClCompile Include="Brain.cpp">
       <Filter>Source Files\GameComponents\Brains</Filter>
+    </ClCompile>
+    <ClCompile Include="Timer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Level.cpp">
+      <Filter>Source Files\Slides</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -180,13 +183,20 @@
     <ClInclude Include="Chaos.h">
       <Filter>Source Files\GameComponents\Brains</Filter>
     </ClInclude>
-    <ClInclude Include="CollisionDetector.h" />
-    <ClInclude Include="Level.h" />
     <ClInclude Include="BetweenLevels.h">
       <Filter>Source Files\Slides</Filter>
     </ClInclude>
     <ClInclude Include="Brain.h">
       <Filter>Source Files\GameComponents\Brains</Filter>
+    </ClInclude>
+    <ClInclude Include="Level.h">
+      <Filter>Source Files\Slides</Filter>
+    </ClInclude>
+    <ClInclude Include="CollisionDetector.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Timer.h">
+      <Filter>Source Files</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

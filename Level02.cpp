@@ -23,6 +23,7 @@ SlideType Level02::getNextSlide()
 
     if (allDead)
     {
+        this->stop();
         return SlideType::end;
     }
 

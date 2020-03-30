@@ -12,7 +12,6 @@ SlideType End::getNextSlide()
 {
     if (IsKeyDown(VK_SPACE))
     {
-        Projector::get().reset();
         return SlideType::level01;
     }
 

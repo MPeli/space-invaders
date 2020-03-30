@@ -8,11 +8,12 @@
 Level::Level()
 {
     Logger::get() << "Initializing the Level slide...\n";
-    this->reset();
 }
 
 void Level::reset()
 {
+    // Level::timer.start();
+
     const auto& [player, bullets, enemies] = GameComponents::get().getAllComponents();
 
     player.position = player.basePosition;
@@ -91,4 +92,13 @@ void Level::tick(const Time currentTime)
 
     text.tick(currentTime);
     score.tick(currentTime);
+
+    // Level::timer.tick(currentTime);
 }
+
+void Level::stop()
+{
+    // Level::timer.stop();
+}
+
+// Timer Level::timer;

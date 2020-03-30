@@ -35,4 +35,3 @@ public:
 		component.position = component.basePosition + Position(dx, dy);
     }
 };
-

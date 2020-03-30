@@ -9,4 +9,5 @@ class Level01 : public Level
 public:
     Level01();
     SlideType getNextSlide() override;
+    void reset() override;
 };

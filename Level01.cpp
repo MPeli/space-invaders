@@ -22,8 +22,16 @@ SlideType Level01::getNextSlide()
 
     if (allDead)
     {
+        this->stop();
         return SlideType::betweenLevels;
     }
 
     return SlideType::level01;
+}
+
+void Level01::reset()
+{
+    Level::reset();
+    auto& score = GameComponents::get().getScore();
+    score.setScore(0);    
 }
