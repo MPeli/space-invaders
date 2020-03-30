@@ -8,7 +8,7 @@ class Score : public Tickable
 {
 public:
     void addPoints(const int points);
-
+    void setScore(const int score);
     void tick(const Time time) override;
 
 private:

@@ -5,7 +5,7 @@
 
 End::End()
 {
-    Logger::get() << "Initializing the beginning slide...\n";
+    Logger::get() << "Initializing the end slide...\n";
 }
 
 SlideType End::getNextSlide()

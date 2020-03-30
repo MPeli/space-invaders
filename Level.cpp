@@ -69,6 +69,7 @@ void Level::tick(const Time currentTime)
             // Colision detected
             if (collide(enemyMinMax, player.getBoundingBox()))
             {
+                score.setScore(0);
                 GameComponents::get().getSound().explode();
                 break;
             }

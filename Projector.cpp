@@ -20,6 +20,11 @@ Projector::Projector() : sprites(Sprites::get())
 }
 
 
+SlideType Projector::getActiveSlide()
+{
+    return this->activeSlide;
+}
+
 void Projector::reset()
 {
     for (auto& slide : slides)

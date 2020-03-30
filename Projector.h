@@ -12,6 +12,7 @@ class Projector : public Singleton<Projector>, public Tickable
     friend Singleton<Projector>;
 public:
 
+    SlideType getActiveSlide();
     void reset();
     void tick(const Time time) override;
 

@@ -17,6 +17,12 @@ void Game()
 	while (!WantQuit() && !IsKeyDown(VK_ESCAPE))
 	{
 		++time;
+
+		if (IsKeyDown(VK_SPACE) && Projector::get().getActiveSlide() == SlideType::end)
+		{
+			time = 0;
+		}
+
 		Projector::get().tick(time);
 		GameComponents::get().getSound().tick(time);
 
