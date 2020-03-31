@@ -1,6 +1,7 @@
 #pragma once
 #include "Text.h"
 #include "Slide.h"
+#include "Timer.h"
 
 class BetweenLevels : public Slide
 {

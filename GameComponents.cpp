@@ -42,3 +42,8 @@ const Canvas& GameComponents::getCanvas() noexcept
 {
     return this->canvas;
 }
+
+Timer& GameComponents::getTimer() noexcept
+{
+    return this->timer;
+}

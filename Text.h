@@ -17,15 +17,17 @@ public:
         center
     };
 
-    Text(std::string_view text, std::unordered_map<char, Sprite>& alphabet, const Position position, const Alignment alignment, const Size size) noexcept;
+    Text(std::string text, std::unordered_map<char, Sprite>& alphabet, const Position position, const Alignment alignment, const Size size) noexcept;
 
     void tick(const Time time) override;
-    void setText(const std::string_view string);
+    void setText(const std::string string);
+    void setPosition(const Position& position);
+    void setSize(const Size& size);
 
 private:
     Vector2D position;
     Size size;
-    std::string_view text;
+    std::string text;
     std::unordered_map<char, Sprite>& alphabet;
     Alignment alignment;
 };

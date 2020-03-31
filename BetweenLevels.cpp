@@ -26,5 +26,6 @@ void BetweenLevels::reset()
 
 void BetweenLevels::tick(const Time currentTime)
 {
+    GameComponents::get().getTimer().tick(currentTime);
     text.tick(currentTime);
 }

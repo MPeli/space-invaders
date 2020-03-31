@@ -15,8 +15,6 @@ public:
     void tick(const Time currentTime) override;
     void stop();
 
-    Timer timer;
-
 protected:
     Text text = { "score", sprites.alphabet, Position(80, 30), Text::Alignment::left, Size(40, 40) };
     std::unique_ptr<Brain> brain;

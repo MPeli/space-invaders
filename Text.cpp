@@ -3,7 +3,7 @@
 #include "lib/leetlib.h"
 #include <algorithm>
 
-Text::Text(std::string_view text, std::unordered_map<char, Sprite>& alphabet, const Position position, const Alignment alignment, const Size size) noexcept : text(text), alphabet(alphabet), alignment(alignment), size(size)
+Text::Text(std::string text, std::unordered_map<char, Sprite>& alphabet, const Position position, const Alignment alignment, const Size size) noexcept : text(text), alphabet(alphabet), alignment(alignment), size(size)
 {
     this->position = position;
 }
@@ -32,8 +32,17 @@ void Text::tick(const Time time)
     }
 }
 
-
-void Text::setText(const std::string_view text)
+void Text::setText(const std::string text)
 {
     this->text = text;
+}
+
+void Text::setPosition(const Position& position)
+{
+    this->position = position;
+}
+
+void Text::setSize(const Size& size)
+{
+    this->size = size;
 }

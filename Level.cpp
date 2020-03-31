@@ -12,11 +12,12 @@ Level::Level()
 
 void Level::reset()
 {
-    timer.start();
+    GameComponents::get().getTimer().start();
 
     const auto& [player, bullets, enemies] = GameComponents::get().getAllComponents();
 
     player.position = player.basePosition;
+    player.recomputeBoundingBox();
 
     for (auto& bullet : bullets)
     {
@@ -28,6 +29,7 @@ void Level::reset()
     for (auto& enemy : enemies)
     {
         enemy.position = enemy.basePosition;
+        enemy.recomputeBoundingBox();
         enemy.visible = true;
     }
 }
@@ -93,10 +95,10 @@ void Level::tick(const Time currentTime)
     text.tick(currentTime);
     score.tick(currentTime);
 
-    timer.tick(currentTime);
+    GameComponents::get().getTimer().tick(currentTime);
 }
 
 void Level::stop()
 {
-    timer.stop();
+    GameComponents::get().getTimer().stop();
 }

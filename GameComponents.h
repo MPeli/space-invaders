@@ -10,6 +10,7 @@
 #include "Sprite.h"
 #include "Singleton.h"
 #include "Projector.h"
+#include "Timer.h"
 
 #include <tuple>
 #include "Canvas.h"
@@ -26,6 +27,7 @@ public:
     Sounds& getSound() noexcept;
     Score& getScore() noexcept;
     const Canvas& getCanvas() noexcept;
+    Timer& getTimer() noexcept;
 
 private:
     Sounds sounds;
@@ -34,6 +36,7 @@ private:
     Player player = { Sprites::get().player, Position(0, 0), Size(0, 0) };
     Container<Bullet> bullets;
     Container<Enemy> enemies;
+    Timer timer;
 
     GameComponents();
 };
