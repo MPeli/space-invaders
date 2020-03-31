@@ -12,7 +12,7 @@ Level::Level()
 
 void Level::reset()
 {
-    // Level::timer.start();
+    timer.start();
 
     const auto& [player, bullets, enemies] = GameComponents::get().getAllComponents();
 
@@ -93,12 +93,10 @@ void Level::tick(const Time currentTime)
     text.tick(currentTime);
     score.tick(currentTime);
 
-    // Level::timer.tick(currentTime);
+    timer.tick(currentTime);
 }
 
 void Level::stop()
 {
-    // Level::timer.stop();
+    timer.stop();
 }
-
-// Timer Level::timer;

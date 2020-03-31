@@ -15,7 +15,7 @@ public:
     void tick(const Time currentTime) override;
     void stop();
 
-    // static Timer timer;
+    Timer timer;
 
 protected:
     Text text = { "score", sprites.alphabet, Position(80, 30), Text::Alignment::left, Size(40, 40) };

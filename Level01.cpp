@@ -31,6 +31,8 @@ SlideType Level01::getNextSlide()
 
 void Level01::reset()
 {
+    Timer::accumulatedTime = 0;
+
     Level::reset();
     auto& score = GameComponents::get().getScore();
     score.setScore(0);    
